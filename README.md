@@ -144,7 +144,13 @@ omarchy plugin disable omarchy.lock
 
 ### From a release archive
 
+Download **[tablet-lockscreen-touch-1.0.0.zip](https://github.com/omiddev9/tablet-lockscreen-touch/releases/download/v1.0.0/tablet-lockscreen-touch-1.0.0.zip)**
+(the archive attached to the
+[v1.0.0 release](https://github.com/omiddev9/tablet-lockscreen-touch/releases/tag/v1.0.0)),
+then:
+
 ```bash
+curl -LO https://github.com/omiddev9/tablet-lockscreen-touch/releases/download/v1.0.0/tablet-lockscreen-touch-1.0.0.zip
 unzip tablet-lockscreen-touch-1.0.0.zip
 cd tablet-lockscreen-touch-1.0.0
 ./install.sh
