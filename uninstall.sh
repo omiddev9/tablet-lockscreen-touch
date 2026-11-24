@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Tablet Lockscreen Touch 1.0.0 — removes everything install.sh put in place.
+# Omarchy Tablet Lockscreen Touch 1.0.1 — removes everything install.sh put in place.
 set -euo pipefail
 
 THEME_ID=tablet-lockscreen-touch

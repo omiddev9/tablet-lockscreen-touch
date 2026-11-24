@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Tablet Lockscreen Touch 1.0.0
+# Omarchy Tablet Lockscreen Touch 1.0.1
 #
 # One installer for both on-screen keyboards a tablet needs on Omarchy:
 #   1. boot / login screen  -> SDDM theme "tablet-lockscreen-touch"   (root part)
@@ -57,8 +57,18 @@ if [ -d "$THEME_PATH" ] && ! diff -rq "$here/sddm-theme" "$THEME_PATH" >/dev/nul
   log "old theme saved to $THEME_PATH.bak-$stamp"
 fi
 as_root install -d -m 0755 "$THEME_PATH"
-as_root cp -a "$here/sddm-theme/." "$THEME_PATH/"
-log "theme files in place"
+as_root cp -R "$here/sddm-theme/." "$THEME_PATH/"
+# The greeter runs as the login UI and handles other users' passwords, so it must
+# not stay owned or writable by the account that ran this installer: a process
+# controlling that account could otherwise replace the greeter and capture the
+# passwords typed into it afterwards.
+if [ "${TABLET_LOCK_TOUCH_NO_ROOT:-0}" = 1 ]; then
+  log "TABLET_LOCK_TOUCH_NO_ROOT=1: theme ownership left unchanged (test mode)"
+else
+  as_root chown -R 0:0 "$THEME_PATH"
+  as_root chmod -R u=rwX,go=rX "$THEME_PATH"
+  log "theme files in place (owner root, not writable by the installing user)"
+fi
 
 as_root install -d -m 0755 "$SDDM_CONF_DIR"
 want_dropin=$'[Theme]\nCurrent='"$THEME_ID"

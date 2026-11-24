@@ -1,15 +1,15 @@
-# Tablet Lockscreen Touch
+# Omarchy Tablet Lockscreen Touch
 
-**On-screen keyboard for every lock screen a tablet meets on Omarchy** — the
-session lock and the boot/login screen, both typed with your finger, both
-shipping in this one repository.
+**An on-screen touch keyboard for the Omarchy operating system** — every screen
+where Omarchy asks a tablet for a password: the session lock and the boot/login
+screen, both typed with your finger, both shipping in this one repository.
 
-Use a tablet, a handheld, or any machine with no hardware keyboard and the
-stock Omarchy locks stop being usable: the password field expects a keyboard
-that is not there. Tablet Lockscreen Touch adds a real touch keypad to both
-screens where Omarchy asks for a password, and keeps the rest of the stock
-experience — masked password dots, PAM authentication, fingerprint support,
-and the wallpaper blur — exactly as it was.
+Use the Omarchy operating system on a tablet, a handheld, or any machine with
+no hardware keyboard and the stock locks stop being usable: the password field
+expects a keyboard that is not there. Omarchy Tablet Lockscreen Touch adds a
+real touch keypad to both screens where Omarchy asks for a password, and keeps
+the rest of the stock experience — masked password dots, PAM authentication,
+fingerprint support, and the wallpaper blur — exactly as it was.
 
 | Where | What | Files |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ The two halves are installed together, updated together and removed together.
 There is no second download, no second package, and no network access during
 install.
 
-![Tablet Lockscreen Touch: the Omarchy lock screen with the on-screen touch keyboard](preview.png)
+![Omarchy Tablet Lockscreen Touch: the Omarchy lock screen with the on-screen touch keyboard](preview.png)
 
 *The plugin's own lock surface: blurred wallpaper, password field and touch keypad, captured with `omarchy-shell lock preview` over the Astral theme wallpaper (MIT, © 2026 Manuel Burki), kept in [`assets/astral-wallpaper.webp`](assets/astral-wallpaper.webp).*
 
@@ -144,15 +144,15 @@ omarchy plugin disable omarchy.lock
 
 ### From a release archive
 
-Download **[tablet-lockscreen-touch-1.0.0.zip](https://github.com/omiddev9/tablet-lockscreen-touch/releases/download/v1.0.0/tablet-lockscreen-touch-1.0.0.zip)**
+Download **[tablet-lockscreen-touch-1.0.1.zip](https://github.com/omiddev9/tablet-lockscreen-touch/releases/download/v1.0.1/tablet-lockscreen-touch-1.0.1.zip)**
 (the archive attached to the
-[v1.0.0 release](https://github.com/omiddev9/tablet-lockscreen-touch/releases/tag/v1.0.0)),
+[v1.0.1 release](https://github.com/omiddev9/tablet-lockscreen-touch/releases/tag/v1.0.1)),
 then:
 
 ```bash
-curl -LO https://github.com/omiddev9/tablet-lockscreen-touch/releases/download/v1.0.0/tablet-lockscreen-touch-1.0.0.zip
-unzip tablet-lockscreen-touch-1.0.0.zip
-cd tablet-lockscreen-touch-1.0.0
+curl -LO https://github.com/omiddev9/tablet-lockscreen-touch/releases/download/v1.0.1/tablet-lockscreen-touch-1.0.1.zip
+unzip tablet-lockscreen-touch-1.0.1.zip
+cd tablet-lockscreen-touch-1.0.1
 ./install.sh
 ```
 
@@ -160,7 +160,11 @@ cd tablet-lockscreen-touch-1.0.0
 
 1. Copies the theme to `/usr/share/sddm/themes/tablet-lockscreen-touch`
    (any previous copy is backed up as `*.bak-<timestamp>` first) and writes
-   `/etc/sddm.conf.d/zz-tablet-lockscreen-touch-theme.conf` selecting it.
+   `/etc/sddm.conf.d/zz-tablet-lockscreen-touch-theme.conf` selecting it. The
+   installed theme is then handed to `root` and set to `755`/`644`, so the
+   account that ran the installer cannot change the login screen it sees later —
+   a greeter is password-handling code and must not stay writable by a normal
+   user.
 2. Copies the lock plugin to
    `~/.config/omarchy/plugins/io.github.omiddev9.tablet-lockscreen-touch`,
    backs up `~/.config/omarchy/shell.json`, and adds
@@ -258,6 +262,15 @@ sudo systemctl restart sddm
 ```
 
 ---
+
+## Credits and upstream material
+
+The session lock is adapted from Omarchy's own `omarchy.lock` Quickshell plugin,
+and the SDDM theme from Omarchy's stock greeter artwork and keypad layout. That
+material is MIT licensed, © David Heinemeier Hansson; its notice is kept in
+[NOTICE.md](NOTICE.md) together with the list of reused files. The wallpaper in
+the preview was made by Manuel Burki (Astral, MIT) — see
+[assets/README.md](assets/README.md).
 
 ## Author
 
