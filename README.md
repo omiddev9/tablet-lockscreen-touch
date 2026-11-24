@@ -18,12 +18,12 @@ fingerprint support, and the wallpaper blur — exactly as it was.
 
 The two halves are installed together, updated together and removed together.
 There is no second download, no second package, and no network access during
+install.
 
 **Tested hardware:** Lenovo IdeaPad Miix 320 — the 10.1″ keyboard-less 2-in-1.
 Both keyboards in this repository were tested there: the session lock keypad,
 portrait and landscape rotation, password and fingerprint unlock, and the SDDM
 login keypad on the boot screen.
-install.
 
 ![Omarchy Tablet Lockscreen Touch: the Omarchy lock screen with the on-screen touch keyboard](preview.png)
 
