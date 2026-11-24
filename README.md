@@ -20,6 +20,10 @@ The two halves are installed together, updated together and removed together.
 There is no second download, no second package, and no network access during
 install.
 
+![Tablet Lockscreen Touch: the Omarchy lock screen with the on-screen touch keyboard](preview.png)
+
+*The plugin's own lock surface: blurred wallpaper, password field and touch keypad, captured with `omarchy-shell lock preview`.*
+
 ---
 
 ## Session lock
