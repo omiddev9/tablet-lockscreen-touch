@@ -22,7 +22,7 @@ install.
 
 ![Tablet Lockscreen Touch: the Omarchy lock screen with the on-screen touch keyboard](preview.png)
 
-*The plugin's own lock surface: blurred wallpaper, password field and touch keypad, captured with `omarchy-shell lock preview`.*
+*The plugin's own lock surface: blurred wallpaper, password field and touch keypad, captured with `omarchy-shell lock preview` over the Astral theme wallpaper (MIT, © 2026 Manuel Burki), kept in [`assets/astral-wallpaper.webp`](assets/astral-wallpaper.webp).*
 
 ---
 
