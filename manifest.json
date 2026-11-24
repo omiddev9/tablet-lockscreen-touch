@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.omiddev9.tablet-lockscreen-touch",
+  "name": "Tablet Lockscreen Touch",
+  "version": "1.0.0",
+  "author": "Omid.Developer",
+  "license": "MIT",
+  "homepage": "https://github.com/omiddev9/tablet-lockscreen-touch",
+  "description": "On-screen touch keyboard for a keyboard-less tablet on Omarchy: a Quickshell session lock with password and fingerprint PAM flows, plus a matching SDDM login theme. Both type straight into the real password field.",
+  "kinds": [
+    "service"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "Service.qml"
+  },
+  "omarchy": {
+    "capabilities": [
+      "authentication"
+    ],
+    "clonedFrom": "omarchy.lock"
+  }
+}

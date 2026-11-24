@@ -1,0 +1,9 @@
+[SddmGreeterTheme]
+Name=Tablet Lockscreen Touch
+Description=Omarchy login theme with an on-screen touch keyboard for tablets
+Author=Omid.Developer
+Type=sddm-theme
+Version=1.0
+QtVersion=6
+
+[General]
